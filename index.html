@@ -469,11 +469,11 @@
         var account = null;
 
         var stakingContract = null;
-        const stakingABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[],"name":"NFTsStaked","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"addRareApe","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"findRewards","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"ownerOfStakedNFT","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"parentNFT","outputs":[{"internalType":"contract IERC721","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"rareIDs","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rareRewardRate","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"receiveReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"removeRareApe","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"rewardRate","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rewardsToken","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"addy","type":"address"}],"name":"setNFTAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint32","name":"rate","type":"uint32"}],"name":"setRewardRate","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"addy","type":"address"}],"name":"setTokenAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"showRewards","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"stakeNFT","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"stakedNFTs","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"stakingStartTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"unStakeNFT","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"unclaimedRewards","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
-        const stakingAddress = "0xc5884BD00Ea49F22174CdeB0d911c5be9dd5E88c";
+        const stakingABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[],"name":"NFTsStaked","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"addRareApe","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"findOwned","outputs":[{"internalType":"bool[]","name":"","type":"bool[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"findRewards","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"findStaked","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"ownerOfStakedNFT","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"parentNFT","outputs":[{"internalType":"contract IERC721","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"rareIDs","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rareRewardRate","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"receiveReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"removeRareApe","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"rewardRate","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rewardsToken","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"addy","type":"address"}],"name":"setNFTAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint32","name":"rate","type":"uint32"}],"name":"setRareRewardRate","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint32","name":"rate","type":"uint32"}],"name":"setRewardRate","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"addy","type":"address"}],"name":"setTokenAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"showRewards","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"stakeNFT","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"stakedNFTs","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"stakingStartTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"}],"name":"unStakeNFT","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"unclaimedRewards","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
+        const stakingAddress = "0x172ee73D174ed2aE2a280B2955c1DA2400472318";
 
         var tokenContract = null;
-        const tokenABI =[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"account","type":"address"}],"name":"Paused","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"account","type":"address"}],"name":"Unpaused","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mintToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pause","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"paused","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"spendToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"unpause","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+        const tokenABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"account","type":"address"}],"name":"Paused","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"account","type":"address"}],"name":"Unpaused","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mintToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pause","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"paused","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"spendToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"unpause","outputs":[],"stateMutability":"nonpayable","type":"function"}];
         const tokenAddress = "0x986b5281beab744aF0d2667519e48f8B28B974C0";
 
         var nftContract = null;
@@ -507,7 +507,7 @@
 
         const connectWallet = async () =>{ 
             if(window.ethereum){
-                await window.ethereum.send('eth_requestAccounts');
+                await ethereum.request({method: "eth_requestAccounts"});
                 window.web3 = new Web3(window.ethereum);
 
                 var accounts = await web3.eth.getAccounts();
@@ -520,72 +520,11 @@
                 document.getElementById("connectButton").style.visibility = 'hidden';
                 document.getElementById("parent").style.visibility = "visible";
                 
-                loadData();
+                await loadData();
             }
         }
 
-        const reloadData = async () =>{
-            for(let i = 0; i < nftIDsStaked.length; i++){
-                    addNFTOnRow(nftIDsStaked[i]);
-                    let reward = await findRewards(i);
-                    stakedNFTRewards[nftIDsStaked[i]] = reward;
-            }
-
-                const stakedNFTRewardText = document.getElementById("stakedNFTRewardText");
-                const claimRewardButton  = document.getElementById("claimReward");
-
-                for(let i = 1; i <= currentStakedItems; i++){
-                    const nft = document.getElementById("stakedNFT ".concat(i));
-                    nft.addEventListener('mouseover', (e) =>{
-                        shouldStake = false;
-                        nft.style.transition = "border 0.5s ease";
-                        nft.style.border = "1px yellow solid";
-                    });
-                    nft.addEventListener('mouseleave', (e) =>{
-                        nft.style.transition = "border 0.5s ease";
-                        nft.style.border = "1px white solid";
-                    });
-                    nft.addEventListener('click', (e) =>{
-                        enableUnstakeButton();
-                        selectedStakedId = nftIDsStaked[i-1];
-
-                        setStakedNFTRewardText(i - 1);
-                    });
-                }
-
-                for(let i = 0; i < nftIDsOwned.length; i++){
-                    addNonStakedNFTOnRow(nftIDsOwned[i]);
-                }
-
-                for(let i = 1; i <= currentUnstakedItems; i++){
-                    const nft = document.getElementById("unstakedNFT ".concat(i));
-                    nft.addEventListener('mouseover', (e) =>{
-                        nft.style.transition = "border 0.5s ease";
-                        nft.style.border = "1px rgb(0, 229, 255) solid";
-                    });
-                    nft.addEventListener('mouseleave', (e) =>{
-                        nft.style.transition = "border 0.5s ease";
-                        nft.style.border = "1px white solid";
-                    });
-                    nft.addEventListener('click', (e) =>{
-                        shouldStake = true;
-                        enableStakeButton();
-                        selectedUnstakedId = nftIDsOwned[i-1];
-
-                        stakedNFTRewardText.style.visibility = "hidden";
-                    });
-                }
-
-                document.getElementById("stakeNFT").addEventListener('click', (e) =>{
-                    if(shouldStake){
-                        stakeNFT();
-                    }
-                    else{
-                        unstakeNFT();
-                    }
-                });
-        }
-
+        
         const loadData = async () =>{
             if(await nftContract.methods.isApprovedForAll(account, stakingAddress).call({from: account}) === false){
                 openLoadingScreen();
@@ -597,24 +536,25 @@
 
                 openLoadingScreen();
 
-                for(let i = 0; i < maxSupply; i++){
-                let isOwner = await findNFTOwnedIds(i);
-                if(isOwner === account){
-                    nftIDsOwned.push(i);
+                let addresses = await findNFTOwnedIds();
+                for(let i = 0; i < addresses.length; i++){
+                    if(addresses[i]){
+                        nftIDsOwned.push(i);
+                    }
                 }
-                let isStaked = await findNFTStakedIds(i);
-                if(isStaked === account){
+
+                let stakedIds = await findNFTStakedIds();
+                for(let i = 0; i < stakedIds.length; i++){
                     nftIDsStaked.push(i);
                 }
-				console.log(i);
 
-                }
+                
 
 				console.log("first part working");
 
 
                 for(let i = 0; i < nftIDsStaked.length; i++){
-                    addNFTOnRow(nftIDsStaked[i]);
+                    addNFTOnRow(nftIDsStaked[i] + 1);
                     let reward = await findRewards(i);
                     stakedNFTRewards[nftIDsStaked[i]] = reward;
                 }
@@ -643,7 +583,7 @@
                 }
 
                 for(let i = 0; i < nftIDsOwned.length; i++){
-                    addNonStakedNFTOnRow(nftIDsOwned[i]);
+                    addNonStakedNFTOnRow(nftIDsOwned[i] + 1);
                 }
 
                 for(let i = 1; i <= currentUnstakedItems; i++){
@@ -665,16 +605,24 @@
                     });
                 }
 
-                document.getElementById("stakeNFT").addEventListener('click', (e) =>{
-                    if(shouldStake){
-                        stakeNFT();
-                    }
-                    else{
-                        unstakeNFT();
-                    }
-                });
-
                 closeLoadingScreen();
+        }
+
+        const reset = () =>{
+            for(let i = 1; i <= currentStakedItems; i++){
+                const staked = document.getElementById("stakedNFT ".concat(i));
+                staked.remove();
+            }
+
+            for(let x = 1; x <= currentUnstakedItems; x++){
+                const unstaked = document.getElementById("unstakedNFT ".concat(x));
+                unstaked.remove();
+            }
+
+            for(let z = 1; z <= currentRowCount; z++){
+                const row = document.getElementById("stakingRow ".concat(z));
+                row.remove();
+            }
         }
 
         const initialise = () =>{
@@ -712,6 +660,15 @@
             claimReward.addEventListener('mouseleave', (e) =>{
                 claimText.style.transition = "color 0.5s ease";
                 claimText.style.color = "white";
+            });
+
+            document.getElementById("stakeNFT").addEventListener('click', (e) =>{
+                if(shouldStake){
+                    StakeNFT();
+                }
+                else{
+                    UnstakeNFT();
+                }
             });
         }
 
@@ -777,15 +734,12 @@
         }
 
 
-        const findNFTStakedIds = async (num) =>{
-            return await stakingContract.methods.ownerOfStakedNFT(num).call({from: account})
+        const findNFTStakedIds = async () =>{
+            return await stakingContract.methods.findStaked(account).call({from: account});
         }
 
-        const findNFTOwnedIds = async (num) =>{
-			if(num === 330){
-				return;
-			}
-            return await nftContract.methods.ownerOf(num).call({from: account});
+        const findNFTOwnedIds = async () =>{
+			return await stakingContract.methods.findOwned(account).call({from: account});
         }
 
         const enableStakeButton = () =>{
@@ -811,7 +765,7 @@
         }
 
 
-        const stakeNFT = async () =>{
+        const StakeNFT = async () =>{
             console.log("staking NFT");
             var shouldStop = false;
             openLoadingScreen();
@@ -827,46 +781,23 @@
                 return;
             }
 
+            reset();
 
             currentItemsPerRow = {};
             stakedNFTRewards = {};
             shouldStake = true;
             selectedStakedId = 0;
-
-            for(let i = 1; i <= currentUnstakedItems; i++){
-                const nft = document.getElementById("unstakedNFT ".concat(i));
-                nft.remove();
-            }
-            for(let i = 1; i <= currentStakedItems; i++){
-                const nft = document.getElementById("stakedNFT ".concat(i));
-                nft.remove()
-            }
-            for(let i = 1; i <= currentRowCount; i++){
-                const nft = document.getElementById("stakingRow ".concat(i));
-                nft.remove();
-            }
-            
             currentRowCount = 0;
             currentStakedItems = 0;
             currentUnstakedItems = 0;
 
+            nftIDsOwned = [];
+            nftIDsStaked = [];
 
-            let index;
-            for(let i = 0; i < nftIDsOwned.length; i++){
-                if(nftIDsOwned[i] === selectedUnstakedId){
-                    index = i;
-                    break;
-                }
-            }
-            nftIDsOwned.splice(index);
-            nftIDsStaked.push(selectedUnstakedId);
-    
-            selectedUnstakedId = 0;
-            await reloadData();
-            enableUnstakeButton();
+            await loadData();
         }
 
-        const unstakeNFT = async () =>{
+        const UnstakeNFT = async () =>{
             console.log("unstaking NFT");
             var shouldStop = false;
             openLoadingScreen();
@@ -882,42 +813,20 @@
                 return;
             }
 
+            reset();
+
             currentItemsPerRow = {};
             stakedNFTRewards = {};
             shouldStake = true;
-            selectedUnstakedId = 0;
-
-            for(let i = 1; i <= currentUnstakedItems; i++){
-                const nft = document.getElementById("unstakedNFT ".concat(i));
-                nft.remove();
-            }
-            for(let i = 1; i <= currentStakedItems; i++){
-                const nft = document.getElementById("stakedNFT ".concat(i));
-                nft.remove()
-            }
-            for(let i = 1; i <= currentRowCount; i++){
-                const nft = document.getElementById("stakingRow ".concat(i));
-                nft.remove();
-            }
-
+            selectedStakedId = 0;
             currentRowCount = 0;
             currentStakedItems = 0;
             currentUnstakedItems = 0;
 
+            nftIDsOwned = [];
+            nftIDsStaked = [];
 
-            let index;
-            for(let i = 0; i < nftIDsStaked.length; i++){
-                if(nftIDsStaked[i] === selectedStakedId){
-                    index = i;
-                    break;
-                }
-            }
-            nftIDsStaked.splice(index);
-            nftIDsOwned.push(selectedStakedId);
-    
-            selectedStakedId = 0;
-            await reloadData();
-            enableStakeButton();
+            await loadData();
         }
 
         const claimRewards = async () =>{
