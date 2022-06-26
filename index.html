@@ -539,13 +539,13 @@
                 let addresses = await findNFTOwnedIds();
                 for(let i = 0; i < addresses.length; i++){
                     if(addresses[i]){
-                        nftIDsOwned.push(i);
+                        nftIDsOwned.push(i + 1);
                     }
                 }
 
                 let stakedIds = await findNFTStakedIds();
                 for(let i = 0; i < stakedIds.length; i++){
-                    nftIDsStaked.push(i);
+                    nftIDsStaked.push(parseInt(stakedIds[i]) + 1);
                 }
 
                 
@@ -554,8 +554,8 @@
 
 
                 for(let i = 0; i < nftIDsStaked.length; i++){
-                    addNFTOnRow(nftIDsStaked[i] + 1);
-                    let reward = await findRewards(i);
+                    addNFTOnRow(nftIDsStaked[i]);
+                    let reward = await findRewards(nftIDsStaked[i]);
                     stakedNFTRewards[nftIDsStaked[i]] = reward;
                 }
 
@@ -576,14 +576,14 @@
                     });
                     nft.addEventListener('click', (e) =>{
                         enableUnstakeButton();
-                        selectedStakedId = nftIDsStaked[i-1];
+                        selectedStakedId = nftIDsStaked[i-1] - 1;
 
                         setStakedNFTRewardText(i - 1);
                     });
                 }
 
                 for(let i = 0; i < nftIDsOwned.length; i++){
-                    addNonStakedNFTOnRow(nftIDsOwned[i] + 1);
+                    addNonStakedNFTOnRow(nftIDsOwned[i]);
                 }
 
                 for(let i = 1; i <= currentUnstakedItems; i++){
@@ -599,7 +599,7 @@
                     nft.addEventListener('click', (e) =>{
                         shouldStake = true;
                         enableStakeButton();
-                        selectedUnstakedId = nftIDsOwned[i-1];
+                        selectedUnstakedId = nftIDsOwned[i-1] - 1;
 
                         stakedNFTRewardText.style.visibility = "hidden";
                     });
@@ -759,8 +759,8 @@
             //let reward2 = await stakingContract.methods.unclaimedRewards(nftIDsStaked[num]).call({from: account});
             //return parseInt(reward) + parseInt (reward2);
 
-            let reward = await stakingContract.methods.showRewards(nftIDsStaked[num]).call({from: account});
-            let reward2 = await stakingContract.methods.unclaimedRewards(nftIDsStaked[num]).call({from: account});
+            let reward = await stakingContract.methods.showRewards(num - 1).call({from: account});
+            let reward2 = await stakingContract.methods.unclaimedRewards(num - 1).call({from: account});
             return parseInt(reward) + parseInt (reward2);
         }
 
