@@ -483,6 +483,11 @@
 	    var burnContract = null;
 	    const burnABI = [
 	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -509,7 +514,7 @@
 		"type": "function"
 	}
 ];
-	    const burnAddy = "0x74922A2EC64c65B784E27bD16A9D415e52052867";
+	    const burnAddy = "0xB48daa22715bc8dA46FE5d2B08c0862B2BB68bB6";
 	    
         let currentRowCount = 0;
         let currentItemsPerRow = {};
